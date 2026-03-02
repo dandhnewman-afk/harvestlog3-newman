@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Harvest Log / Bitácora de Cosecha</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Today's Harvest Tasks / Tareas de Cosecha de Hoy</h1>
+  <input type="date" id="date-selector">
+  <div id="task-list"></div>
+
+  <div id="detail-form" class="detail-form" style="display:none;">
+    <h2 id="detail-title"></h2>
+    <p><strong>Location / Ubicación:</strong> <span id="detail-location"></span></p>
+    <p><strong>Total Quantity / Cantidad Total:</strong> <span id="detail-quantity"></span></p>
+    <div id="sales-breakdown" class="sales-breakdown"></div>
+
+    <label for="assignee">Assignee(s) / Asignado a</label>
+    <select id="assignee">
+      <option value="">-- Select / Seleccionar --</option>
+      <option>Anabel</option>
+      <option>Hailey</option>
+      <option>Stephanie</option>
+      <option>Glen</option>
+      <option>Ashley</option>
+      <option>Kelsey</option>
+      <option>Jeff</option>
+      <option>Other / Otro</option>
+    </select>
+
+    <label for="harvestTime">Time to Harvest (mins) / Tiempo de Cosecha (min)</label>
+    <input id="harvestTime" type="number" />
+
+    <label for="weight">Total Harvest Weight (kg) / Peso Total de Cosecha (kg)</label>
+    <input id="weight" type="number" />
+
+    <label for="washPackTime">Time to Wash & Pack (mins) / Tiempo de Lavado y Empaque (min)</label>
+    <input id="washPackTime" type="number" />
+
+    <label for="notes">Field Crew Notes / Notas del Equipo de Campo</label>
+    <textarea id="notes" placeholder="Optional observations... / Observaciones opcionales..."></textarea>
+
+    <!-- ✅ New Buttons -->
+    <button id="update-btn">Update / Actualizar</button>
+    <button id="complete-btn">Mark Completed / Marcar Completado</button>
+    <button type="button" onclick="closeForm()">Cancel / Cancelar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

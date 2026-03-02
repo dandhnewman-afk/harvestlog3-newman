@@ -1,0 +1,147 @@
+/* BASE STYLES - Apply to all screen sizes */
+body {
+  font-family: sans-serif;
+  margin: 1em; /* Keep some margin */
+  background: #f8f8f8;
+  /* Use a fluid font size base or set a min-width for very small screens if desired */
+  font-size: 16px; /* A good base for readability */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2em; /* Ensure headings are readable */
+}
+
+#date-selector {
+  display: block;
+  margin: 0 auto 1em auto;
+  padding: 0.5em;
+  font-size: 1em;
+  text-align: center;
+  width: calc(100% - 2em); /* Make it fluid, accounting for padding */
+  max-width: 300px; /* Prevent it from getting too wide on large screens */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.task-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  /* Ensure content wraps */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure buttons are large enough to tap */
+.task-card button {
+  width: 100%; /* Make button full width within card */
+  padding: 0.8em 1em; /* Increase tap target size */
+  font-size: 1em; /* Readable font size */
+  box-sizing: border-box;
+}
+
+.task-card.done {
+  opacity: 0.6;
+  border-left: 5px solid green;
+}
+
+.detail-form {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 1em;
+  z-index: 1000;
+  max-height: 80%;
+  overflow-y: auto;
+  /* Ensure it takes up most of the screen on small devices */
+  width: 90%; /* Adjust width to fit screen with margins */
+  margin: 0 auto; /* Center it */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+label {
+  margin-top: 0.8em; /* More space above labels for touch */
+  display: block;
+  font-weight: bold; /* Make labels stand out */
+  font-size: 1em;
+}
+
+input, textarea, select { /* Added select here for consistency */
+  width: 100%;
+  padding: 0.6em; /* More padding for easier tapping/typing */
+  margin-bottom: 1em; /* More space below inputs */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+  font-size: 1em; /* Readable font size */
+}
+
+button {
+  padding: 0.8em 1.5em; /* Larger tap target */
+  margin-top: 0.8em;
+  margin-right: 0.8em; /* Slightly more margin between buttons */
+  font-weight: bold;
+  border: none;
+  background: #2c7;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1em; /* Readable font size */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+button[type="button"] {
+  background: #aaa;
+}
+
+/* Ensure buttons line up better on small screens */
+.detail-form button {
+  display: block; /* Stack buttons vertically */
+  width: calc(100% - 1em); /* Full width minus margin */
+  margin-right: 0;
+  margin-bottom: 0.5em; /* Space between stacked buttons */
+}
+
+
+.sales-breakdown {
+  background: #f1f1f1;
+  padding: 0.8em; /* More padding */
+  border-radius: 5px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 0.95em;
+  /* Use flexbox for horizontal layout on larger screens, and stack on smaller */
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  justify-content: space-around; /* Distribute space evenly */
+}
+
+.sales-breakdown span {
+  display: block; /* Keep them stacked by default */
+  margin-bottom: 0.5em; /* Space between breakdown items */
+  flex: 1 1 45%; /* Allow items to take up about 45% of space, two per row */
+  text-align: center;
+}
+
+/* MEDIA QUERIES for larger screens (optional, but good practice) */
+/* Adjust sales-breakdown to be inline on larger screens */
+@media (min-width: 600px) {
+  .sales-breakdown span {
+    display: inline-block;
+    margin-right: 1em; /* Space out items horizontally */
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .sales-breakdown {
+    justify-content: flex-start; /* Align to start on larger screens */
+  }
+  .detail-form button {
+      display: inline-block; /* Buttons side-by-side on larger screens */
+      width: auto;
+      margin-right: 0.8em;
+  }
+}
